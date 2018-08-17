@@ -23,9 +23,11 @@
 
 ---
 **Raspbian GUI config/startup**
+
 `sudo raspi-config`
 
 **Manual "Sanity" Test (client/server)**
+
 `mix compile`
 `iex -S mix`
 `[iex]IotEmulator.start(7878) //any available port`
