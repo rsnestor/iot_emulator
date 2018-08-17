@@ -1,0 +1,7 @@
+#Elixir compilation artifacts
+/.elixir_ls/
+
+#Build artifacts
+/_build/
+
+*.log
