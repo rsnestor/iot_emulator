@@ -1,0 +1,10 @@
+{application,buffer,
+             [{applications,[kernel,stdlib,elixir]},
+              {description,"Provide read and write buffers for Elixir\n"},
+              {modules,['Elixir.Buffer','Elixir.Buffer.Read',
+                        'Elixir.Buffer.Supervisor','Elixir.Buffer.Sync',
+                        'Elixir.Buffer.Write.Count',
+                        'Elixir.Buffer.Write.KeyList']},
+              {registered,[]},
+              {vsn,"0.3.12"},
+              {mod,{'Elixir.Buffer',[]}}]}.

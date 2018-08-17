@@ -22,10 +22,22 @@
 - Potential integration applicability and/or utilization of cloud IoT solutions (AWS, Google, or Azure)
 
 ---
-### Raspbian GUI config/startup
+**Raspbian GUI config/startup**
 `sudo raspi-config`
 
+**Manual "Sanity" Test (client/server)**
+`mix compile`
+`iex -S mix`
+`[iex]IotEmulator.start(7878) //any available port`
+
+`[bash]telnet localhost 7878 //enter characters then exit (^C)`
+
+*Note: telnet has been removed from OS X, use `nc -t -c localhost 7878`
+
+
 **Reference**
+https://hex.pm/ - Elixir Hex (dependency repo)
+
 https://thingspeak.com/ - IOT Private Cloud Aggregator
 
 https://devpost.com/software/sensorpush
