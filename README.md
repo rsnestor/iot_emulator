@@ -22,53 +22,39 @@
 - Potential integration applicability and/or utilization of cloud IoT solutions (AWS, Google, or Azure)
 
 ---
-**Raspbian GUI config/startup**
+**Raspbian GUI config/startup**  
+`sudo raspi-config`  
 
-`sudo raspi-config`
-
-**Manual "Sanity" Test (client/server)**
-
-`iex -S mix`
-
-`[iex]Relay.start(7878) //any available port`
-
-`[bash]telnet localhost 7878 //enter characters then exit (^C)`
+**Manual "Sanity" Test (client/server)**  
+`iex -S mix`  
+`[iex]Relay.start(7878) //any available port`  
+`[bash]telnet localhost 7878 //enter characters then exit (^C)`  
 
 *Note: telnet has been removed from OS X, use `nc -t -c localhost 7878`
 
-**Testing the Relay Server**
+**Testing the Relay Server**  
+`mix test --exclude external:true`  
 
-`mix test --exclude external:true
+**Load testing a remote Relay Server**  
+On the remote machine (e.g., 'raspberrypi3'), start the server:  
+`[iex]Relay.start(9999) //this is the test default port`  
 
-**Load testing a remote Relay Server**
+Ensure the context settings are correct in the RelayTest (test/perf_test.exs):  
+`  setup_all do  
+    {:ok, rhost: '<remote_hostname>',  
+          load1: 100,  
+          load_max: 1000  
+    }  
+  end`  
 
-On the remote machine (e.g., 'raspberrypi3'), start the server:
+`mix test --only external:true`  
 
-`[iex]Relay.start(9999) //this is the test default port`
+**Reference**   
 
-Ensure the context settings are correct in the RelayTest (test/perf_test.exs):
-
-`  setup_all do
-    {:ok, rhost: '<remote_hostname>',
-          load1: 100,
-          load_max: 1000
-    }
-  end`
-
-`mix test --only external:true
-
-**Reference**
-
-https://elixir-lang.org/getting-started - Elixir language docs
-
-https://hex.pm/ - Elixir Hex (dependency repo)
-
-https://thingspeak.com/ - IOT Private Cloud Aggregator
-
-https://devpost.com/software/sensorpush
-
-https://stackoverflow.com/questions/437061/how-do-you-monitor-network-traffic-on-the-iphone
-
-https://github.com/highmobility/bluetooth-websocket-server
-
-https://robots.thoughtbot.com/playing-with-sockets-and-processes-in-elixir
+https://elixir-lang.org/getting-started - Elixir language docs  
+https://hex.pm/ - Elixir Hex (dependency repo)  
+https://thingspeak.com/ - IOT Private Cloud Aggregator  
+https://devpost.com/software/sensorpush  
+https://stackoverflow.com/questions/437061/how-do-you-monitor-network-traffic-on-the-iphone  
+https://github.com/highmobility/bluetooth-websocket-server  
+https://robots.thoughtbot.com/playing-with-sockets-and-processes-in-elixir  
