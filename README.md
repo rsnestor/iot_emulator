@@ -2,24 +2,24 @@
   An IoT client/server emulator using Elixir
 ---
 ### MVP0 
-- Raspberry Pi wireless integration with SensorPush or other "real" sensor - *(team)*
+- [ ] Raspberry Pi wireless integration with SensorPush or other "real" sensor - *(team)*
 
 ### MVP1 
-- Free public
-- IoT sensors and/or sensor data - *Sagar*
-- Elixir client/server code.  Connectivity via lightweight sockets - *Scott/Kashi*
-- FNM 2017 10K Stats on REO and MF properties (number of properties/units, UPB book value, vacancy stats, REO repair expenses, etc.) - *Tim*
-- ELK Dashboard - *Scott*
-- Mock sensor data generator - *Tim* 
+- [ ] Free public IoT sensors and/or sensor data - *Sagar*
+- [x] Elixir client/server foundation code.  Connectivity via lightweight sockets - *Scott/Kashi*
+- [x] FNM 2017 10K Stats on REO and MF properties (number of properties/units, UPB book value, vacancy stats, REO repair expenses, etc.) - *Tim*
+- [ ] ELK Dashboard - *Scott*
+- [ ] Mock sensor data generator - *Tim* 
 
 ### MVP2 (with additional bandwidth)
-- Elixir server code enhancement. Log and forward sensor data.  Socket connection (local) and forward over http. 
-- Performance test with Elixir server (request throughput)
-- The "Property Management Kit" design (1 slide), with estimated cost 
-- Commercially available sensors vs. Raspberry Pi customized 
+- [ ] Relay server code expansion. Log and forward sensor data to a *sink* server (aggregator).  
+- [ ] Sink server file I/O (for Logstash)
+- [x] Performance test with Elixir server (request throughput)
+- [ ] The "Property Management Kit" design (1 slide), with estimated cost 
+- [ ] Commercially available sensors vs. Raspberry Pi customized (cost comparison)
 
 ### MVP3
-- Potential integration applicability and/or utilization of cloud IoT solutions (AWS, Google, or Azure)
+- [ ] Potential integration applicability and/or utilization of cloud IoT solutions (AWS, Google, or Azure)
 
 ---
 **Raspbian GUI config/startup**  
