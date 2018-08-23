@@ -50,12 +50,12 @@ Ensure the context settings are correct in the RelayTest (test/perf_test.exs):
 `mix test --only external:true`  
 
 **ElasticSearch (cloud)**  
-`curl -x http://<userid>:<pwd>@zsproxy.fanniemae.com:9480 -u elastic:<ec_pwd> https://37d2dd8871dc431ea873e472cfc7ecab.us-east-1.aws.found.io:9243/my_index/my_type -XPOST -H "Content-Type: application/json" -d '{"title": "One", "tags": ["ruby"]}'`  
+`curl -x http://<userid>:<pwd>@zsproxy.fanniemae.com:9480 -u elastic:<ec_pwd> https://37d2dd8871dc431ea873e472cfc7ecab.us-east-1.aws.found.io:9243/iot_emulator_ix/test -XPOST -H "Content-Type: application/json" -d '{"title": "One", "tags": ["ruby"]}'`  
 
-`curl -x http://<userid>:<pwd>@zsproxy.fanniemae.com:9480 -u elastic:<ec_pwd> https://37d2dd8871dc431ea873e472cfc7ecab.us-east-1.aws.found.io:9243/my_index/my_type/_search?pretty=true`  
+`curl -x http://<userid>:<pwd>@zsproxy.fanniemae.com:9480 -u elastic:<ec_pwd> https://37d2dd8871dc431ea873e472cfc7ecab.us-east-1.aws.found.io:9243/logstash-iot-ix/test/_search?pretty=true`  
 
 **Kibana**  
-
+`https://2e826f4a17fe4d268864822c643da6d3.us-east-1.aws.found.io:9243/app/kibana#`
 
 **Reference**   
 
