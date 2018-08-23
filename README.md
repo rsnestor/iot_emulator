@@ -58,8 +58,7 @@ Ensure the context settings are correct in the RelayTest (test/perf_test.exs):
 `https://2e826f4a17fe4d268864822c643da6d3.us-east-1.aws.found.io:9243/app/kibana#`  
 
 **Reference**   
-
-https://2e826f4a17fe4d268864822c643da6d3.us-east-1.aws.found.io:9243/app/kibana# - Kibana (demo)
+https://2e826f4a17fe4d268864822c643da6d3.us-east-1.aws.found.io:9243/app/kibana# - Kibana (demo)  
 https://elixir-lang.org/getting-started - Elixir language docs  
 https://hex.pm/ - Elixir Hex (dependency repo)  
 https://github.com/elixir-ecto/ecto - Database support for Elixir  
