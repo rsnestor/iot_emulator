@@ -1,8 +1,8 @@
 defmodule RelayTest do
-  use ExUnit.Case, async: true, timeout: 1000
+  use ExUnit.Case, async: true, timeout: 5000
 
   setup_all do
-    {:ok, rhost: 'raspberrypi3', 
+    {:ok, rhost: '10.140.125.79', 
           load1: 100,
           load_max: 1000
     }
