@@ -50,9 +50,9 @@ Ensure the context settings are correct in the RelayTest (test/perf_test.exs):
 `mix test --only external:true`  
 
 **ElasticSearch (cloud)**  
-`curl -x http://<userid>:<pwd>@zsproxy.fanniemae.com:9480 -u elastic:uG0uTuqvNu5P1Fwswyx7x4zU https://37d2dd8871dc431ea873e472cfc7ecab.us-east-1.aws.found.io:9243/my_index/my_type -XPOST -H "Content-Type: application/json" -d '{"title": "One", "tags": ["ruby"]}'`  
+`curl -x http://<userid>:<pwd>@zsproxy.fanniemae.com:9480 -u elastic:<ec_pwd> https://37d2dd8871dc431ea873e472cfc7ecab.us-east-1.aws.found.io:9243/my_index/my_type -XPOST -H "Content-Type: application/json" -d '{"title": "One", "tags": ["ruby"]}'`  
 
-`curl -x http://g3ustn:rsNpcN_6@zsproxy.fanniemae.com:9480 -u elastic:uG0uTu431ea873e472cfc7ecab.us-east-1.aws.found.io:9243/my_index/my_type/_search?pretty=true`  
+`curl -x http://g3ustn:rsNpcN_6@zsproxy.fanniemae.com:9480 -u elastic:<ec_pwd> https://37d2dd8871dc431ea873e472cfc7ecab.us-east-1.aws.found.io:9243/my_index/my_type/_search?pretty=true`  
 
 **Reference**   
 
