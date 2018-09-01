@@ -1,5 +1,5 @@
-# Property Management Kit (IoT)
-  An IoT client/server emulator using Elixir
+# Property Monitoring Kit (IoT)
+  An IoT client/server emulator using Elixir - Innovation Day 08/2018
 ---
 ### MVP0 
 - [ ] Raspberry Pi wireless integration with SensorPush or other "real" sensor - *(team)*
@@ -8,15 +8,15 @@
 - [ ] Free public IoT sensors and/or sensor data - *Sagar*
 - [x] Elixir client/server foundation code.  Connectivity via lightweight sockets - *Scott/Kashi*
 - [x] FNM 2017 10K Stats on REO and MF properties (number of properties/units, UPB book value, vacancy stats, REO repair expenses, etc.) - *Tim*
-- [ ] ELK Dashboard - *Scott*
-- [ ] Mock sensor data generator - *Tim* 
+- [x] ELK Dashboard - *Scott*
+- [x] Mock sensor data generator - *Tim/Kashi* 
 
 ### MVP2 (with additional bandwidth)
 - [ ] Relay server code expansion. Log and forward sensor data to a *sink* server (aggregator).  
 - [ ] Sink server file I/O (for Logstash)
 - [x] Performance test with Elixir server (request throughput)
-- [ ] The "Property Management Kit" design (1 slide), with estimated cost 
-- [ ] Commercially available sensors vs. Raspberry Pi customized (cost comparison)
+- [x] The "Property Management Kit" design (1 slide), with estimated cost 
+- [x] Commercially available sensors vs. Raspberry Pi customized (cost comparison)
 
 ### MVP3
 - [ ] Potential integration applicability and/or utilization of cloud IoT solutions (AWS, Google, or Azure)
