@@ -72,5 +72,5 @@ https://github.com/highmobility/bluetooth-websocket-server
 https://robots.thoughtbot.com/playing-with-sockets-and-processes-in-elixir  
 https://fred.stlouisfed.org/series/RRVRUSQ156N  
 
-**Retail Monitoring**
+**Retail Monitoring**  
 https://ring.com
