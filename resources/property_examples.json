@@ -1,0 +1,4 @@
+{"records": [
+   {"propertyId": "14703", "realtorId": "DG024", "city": "Gilbert", "state": "AZ", "location": "33.3528, -111.7890", "squareFootage": "5000+", "propertyType": "MF", "propertyIn": "rural", "temperature": "50", "humidity": "86", "mold": "100", "motion(vacant)": "N"},
+   {"propertyId": "84855", "realtorId": "UL814", "city": "McCord", "state": "OK", "location": {"lat":36.6786, "lon":-97.0373}, "squareFootage": "0.5+ acre", "propertyType": "SF", "propertyIn": "urban", "temperature": "55", "humidity": "85", "mold": "100", "motion(vacant)": "Y"}]
+}

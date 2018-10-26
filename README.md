@@ -50,12 +50,14 @@ Ensure the context settings are correct in the RelayTest (test/perf_test.exs):
 `mix test --only external:true`  
 
 **ElasticSearch (cloud)**  
-`curl -x http://<userid>:<pwd>@zsproxy.fanniemae.com:9480 -u elastic:<ec_pwd> https://37d2dd8871dc431ea873e472cfc7ecab.us-east-1.aws.found.io:9243/iot_emulator_ix/test -XPOST -H "Content-Type: application/json" -d '{"title": "One", "tags": ["ruby"]}'`  
+`curl -x http://<userid>:<pwd>@zsproxy.fanniemae.com:9480 -u elastic:<ec_pwd> https://60b12664d5504516b7cb5a20862cbf19.us-east-1.aws.found.io:9243/iot_prop_mon_ix -XPUT -H "Content-Type: application/json" -d '{ "mappings": {"reo": { "properties": { "location": { "type": "geo_point" } } } } }'`
 
-`curl -x http://<userid>:<pwd>@zsproxy.fanniemae.com:9480 -u elastic:<ec_pwd> https://37d2dd8871dc431ea873e472cfc7ecab.us-east-1.aws.found.io:9243/logstash-iot-ix/test/_search?pretty=true`  
+`curl -x http://<userid>:<pwd>@zsproxy.fanniemae.com:9480 -u elastic:<ec_pwd> https://60b12664d5504516b7cb5a20862cbf19.us-east-1.aws.found.io:9243/iot_prop_mon_ix/reo -XPOST -H "Content-Type: application/json" -d '{"propertyId": "14703", "realtorId": "DG024", "city": "Gilbert", "state": "AZ", "location": "33.3528, -111.7890", "squareFootage": "5000+", "propertyType": "MF", "propertyIn": "rural", "temperature": "50", "humidity": "86", "mold": "100", "motion(vacant)": "N"}'`
+
+`curl -x http://<userid>:<pwd>@zsproxy.fanniemae.com:9480 -u elastic:<ec_pwd> https://60b12664d5504516b7cb5a20862cbf19.us-east-1.aws.found.io:9243/iot_prop_mon_ix/reo/_search?pretty=true`  
 
 **Kibana**  
-`https://2e826f4a17fe4d268864822c643da6d3.us-east-1.aws.found.io:9243/app/kibana#`  
+`https://64ef0707dc1d49f58ebae3ebd99b408d.us-east-1.aws.found.io:9243/app/kibana#/discover`
 
 **Reference**   
 https://2e826f4a17fe4d268864822c643da6d3.us-east-1.aws.found.io:9243/app/kibana# - Kibana (demo)  
@@ -69,3 +71,6 @@ https://stackoverflow.com/questions/437061/how-do-you-monitor-network-traffic-on
 https://github.com/highmobility/bluetooth-websocket-server  
 https://robots.thoughtbot.com/playing-with-sockets-and-processes-in-elixir  
 https://fred.stlouisfed.org/series/RRVRUSQ156N  
+
+**Retail Monitoring**
+https://ring.com
