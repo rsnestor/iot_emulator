@@ -85,7 +85,7 @@ Our original Innovation Day Check List (prioritized):
 
 ---
 **Reference**   
-https://www.elastic.co/ - Elasticsearch doc (ES rocks!)
+https://www.elastic.co/ - Elasticsearch doc (ES rocks!)  
 https://www.realvnc.com/en/connect/docs/raspberry-pi.html - VNC on the Pi  
 https://elixir-lang.org/getting-started - Elixir language docs  
 https://hex.pm/ - Elixir Hex (dependency repo)  
