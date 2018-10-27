@@ -28,9 +28,9 @@ defmodule Relay do
     spawn(fn ->
       case :gen_tcp.listen(port, [:binary, active: false, reuseaddr: true]) do
         {:ok, socket} ->
-          Logger.info("Connected.")
+          Logger.info("Startup ...")
+          Logger.info("Relay Ready.  Receiving IoT data - port " <> to_string port)
           accept_connection(socket)
-
         {:error, reason} ->
           Logger.error("Could not listen: #{reason}")
       end
