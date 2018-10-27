@@ -18,7 +18,7 @@ https://create.arduino.cc/editor/rsnestor/eac61b40-c205-4a41-ad43-aa9db20f8e8a/p
 `python3 -c 'import sensor_tmp36 as s; s.testHarness()'` - Verify that the temp sensor can be read from the COM USB port  
 `python3 ./sensor_relay.py` - Begin reading the temp and relaying to ES  
 
-**Elixir**
+**Elixir**  
 Although the Elixir socket server code is currently dormant, it still works and can be launched and tested in the following ways:  
 
 **Manual "Sanity" Test (client/server)**  
@@ -55,7 +55,7 @@ The following PUT call will designate the "location" field as a `geo_point` data
 The following POST creates a single document record.  
 `curl -x http://<userid>:<pwd>@<proxyhost>:<port> -u elastic:<ec_pwd> https://60b12664d5504516b7cb5a20862cbf19.us-east-1.aws.found.io:9243/iot_prop_mon_ix/reo -XPOST -H "Content-Type: application/json" -d '{"propertyId": "14703", "realtorId": "DG024", "city": "Gilbert", "state": "AZ", "location": "33.3528, -111.7890", "squareFootage": "5000+", "propertyType": "MF", "propertyIn": "rural", "temperature": "50", "humidity": "86", "mold": "100", "motion(vacant)": "N"}'`
 
-The following "dumps" all the documents (in human readable format) from the remote index to stdout ... use with caution :-P   
+The following "dumps" all the documents (in human readable format) to stdout ... use with caution :-P   
 `curl -x http://<userid>:<pwd>@<proxyhost>:<port> -u elastic:<ec_pwd> https://60b12664d5504516b7cb5a20862cbf19.us-east-1.aws.found.io:9243/iot_prop_mon_ix/reo/_search?pretty=true`  
 
 **Kibana**  
@@ -99,8 +99,8 @@ https://devpost.com/software/sensorpush - I use this at home, it's great!)
 https://stackoverflow.com/questions/437061/how-do-you-monitor-network-traffic-on-the-iphone - Interesting thread  
 https://github.com/highmobility/bluetooth-websocket-server  
 
-http://www.fanniemae.com/resources/file/ir/pdf/quarterly-annual-results/2017/10k_2017.pdf - Fannie Mae 2017 10K
-http://www.freddiemac.com/investors/financials/pdf/10k_021518.pdf - Freddie Mac 2017 10K
+http://www.fanniemae.com/resources/file/ir/pdf/quarterly-annual-results/2017/10k_2017.pdf - Fannie Mae 2017 10K  
+http://www.freddiemac.com/investors/financials/pdf/10k_021518.pdf - Freddie Mac 2017 10K  
 
 **Retail Monitoring and Home Security**  
-https://ring.com - A leading manufacturer of consumer HD security cameras.  Remote mobile connectivity and cloud data storage.  
+https://ring.com - A privately held company that produces some pretty *"wicked"* consumer security products.  Their HD security cameras (circa 2018) have motion detection, remote mobile connectivity, audio broadcasting, LED flood lighting, and cloud data storage.  
