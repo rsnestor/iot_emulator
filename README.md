@@ -57,10 +57,12 @@ Ensure the context settings are correct in the RelayTest (test/perf_test.exs):
 `curl -x http://<userid>:<pwd>@zsproxy.fanniemae.com:9480 -u elastic:<ec_pwd> https://60b12664d5504516b7cb5a20862cbf19.us-east-1.aws.found.io:9243/iot_prop_mon_ix/reo/_search?pretty=true`  
 
 **Kibana**  
-`https://64ef0707dc1d49f58ebae3ebd99b408d.us-east-1.aws.found.io:9243/app/kibana#/discover`
-
-**Reference**   
-https://2e826f4a17fe4d268864822c643da6d3.us-east-1.aws.found.io:9243/app/kibana# - Kibana (demo)  
+https://2e826f4a17fe4d268864822c643da6d3.us-east-1.aws.found.io:9243/app/kibana#/discover  
+  
+**Arduino Sketch**  
+https://create.arduino.cc/editor/rsnestor/eac61b40-c205-4a41-ad43-aa9db20f8e8a/preview - Sketch (code) editor  
+  
+**Reference**    
 https://elixir-lang.org/getting-started - Elixir language docs  
 https://hex.pm/ - Elixir Hex (dependency repo)  
 https://github.com/elixir-ecto/ecto - Database support for Elixir  
