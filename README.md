@@ -21,13 +21,14 @@ Setup Instructions:
 1 - Power on the Pi and verify network connectivity (for data transmission to Elasticsearch)  
 2 - Install Python 3 and add (pip3 install) the following packages => serial, requests    
 3 - Attach the Arduino board via USB  
-4 - Verify that temp sensor readings are injestable with the following command 
+4 - Verify that temp sensor readings are injestable with the following command  
 `python3 -c 'import sensor_tmp36 as s; s.testHarness()'`   
 5 - Start the server to begin transmitting sensor data (example below)  
 `python3 sensor_relay2.py -n 10 -e https://search-iottest-zrdh3oawbzm5a62ful33hnprbi.us-east-1.es.amazonaws.com/sensor-data/doc`   
 
 About (--help):  
-`usage: sensor_relay.py [-h] [-v | -q] [-n NUM_RECORDS] -e ELASTIC_URL  
+<pre>
+usage: sensor_relay.py [-h] [-v | -q] [-n NUM_RECORDS] -e ELASTIC_URL  
                        [-p PROXY_URL]  
   
 Start the sensor relay server  
@@ -41,8 +42,8 @@ optional arguments:
   -e ELASTIC_URL, --elastic_url ELASTIC_URL  
                         http(s)://<user>:<pwd>@elastichost>:<port>/<index>/<doc_type>  
   -p PROXY_URL, --proxy_url PROXY_URL  
-                        http(s)://<user>:<pwd>@<proxyhost>:<port>`  
-
+                        http(s)://<user>:<pwd>@<proxyhost>:<port>  
+</pre>  
 **Elixir**  
 Although the Elixir socket server code is currently dormant, it still works and can be launched and tested in the following ways:  
 
@@ -61,15 +62,16 @@ On the remote machine (e.g., 'raspberrypi3'), start the server:
 `[iex]Relay.start(9999) //this is the test default port`  
 
 Modify the RelayTest performance test with the correct host and desired load (test/perf_test.exs):  
-`  setup_all do  
+<pre>
+  setup_all do  
     {:ok, rhost: '<remote_hostname>',  
           load1: 100,  
           load_max: 1000  
     }  
-  end`  
+  end  
 
-`mix test --only external:true`  
-  
+mix test --only external:true  
+</pre>  
 ---
 The following cheatsheet is intended for connectivity checking of the relay platform (Raspberry Pi) with an external Elasticsearch domain (destination *sink*).  The following includes proxy directives for connectivity from a secure network (i.e., behind a corporate firewall).  The following AWS Elasticsearch URLs are no longer active, but left for clarity.  
 
