@@ -15,8 +15,33 @@ Now for the tech stack ... Although the Raspberry Pi can be configured in either
 The new relay server is written in Python and reads the ambient temperature from a sensor connected to the Raspberry Pi's USB port.  
 
 https://create.arduino.cc/editor/rsnestor/eac61b40-c205-4a41-ad43-aa9db20f8e8a/preview - Sketch (code) editor.  The "sketch" package contains an image of the Arduino board wiring and the code that translates the TMP36 miniVolt output to Celsius and Fahrenheit.  The translated TMP36 temperature is sent along with other mock data to Elasticsearch apx. every 5 seconds (adjustable within the code).  
-`python3 -c 'import sensor_tmp36 as s; s.testHarness()'` - Verify that the temp sensor can be read from the COM USB port  
-`python3 ./sensor_relay.py` - Begin reading the temp and relaying to ES  
+
+The Python relay server is only been verified for Raspberry Pi 3 (Debian GNU/Linux v9)  
+Setup Instructions:  
+1 - Power on the Pi and verify network connectivity (for data transmission to Elasticsearch)  
+2 - Install Python 3 and add (pip3 install) the following packages => serial, requests    
+3 - Attach the Arduino board via USB  
+4 - Verify that temp sensor readings are injestable with the following command 
+`python3 -c 'import sensor_tmp36 as s; s.testHarness()'`   
+5 - Start the server to begin transmitting sensor data (example below)  
+`python3 sensor_relay2.py -n 10 -e https://search-iottest-zrdh3oawbzm5a62ful33hnprbi.us-east-1.es.amazonaws.com/sensor-data/doc`   
+
+About (--help):  
+`usage: sensor_relay.py [-h] [-v | -q] [-n NUM_RECORDS] -e ELASTIC_URL  
+                       [-p PROXY_URL]  
+  
+Start the sensor relay server  
+  
+optional arguments:  
+  -h, --help            show this help message and exit  
+  -v, --verbose  
+  -q, --quiet  
+  -n NUM_RECORDS, --num_records NUM_RECORDS  
+                        number of records to relay  
+  -e ELASTIC_URL, --elastic_url ELASTIC_URL  
+                        http(s)://<user>:<pwd>@elastichost>:<port>/<index>/<doc_type>  
+  -p PROXY_URL, --proxy_url PROXY_URL  
+                        http(s)://<user>:<pwd>@<proxyhost>:<port>`  
 
 **Elixir**  
 Although the Elixir socket server code is currently dormant, it still works and can be launched and tested in the following ways:  
@@ -59,7 +84,7 @@ The following "dumps" all the documents (in human readable format) to stdout ...
 `curl -x http://<userid>:<pwd>@<proxyhost>:<port> -u elastic:<ec_pwd> https://60b12664d5504516b7cb5a20862cbf19.us-east-1.aws.found.io:9243/iot_prop_mon_ix/reo/_search?pretty=true`  
 
 **Kibana**  
-https://2e826f4a17fe4d268864822c643da6d3.us-east-1.aws.found.io:9243/app/kibana#/discover    
+https://search-iottest-zrdh3oawbzm5a62ful33hnprbi.us-east-1.es.amazonaws.com/_plugin/kibana/app/kibana#/discover
 
 ---
 Our original Innovation Day Check List (prioritized):  
