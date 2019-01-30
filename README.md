@@ -64,7 +64,7 @@ On the remote machine (e.g., 'raspberrypi3'), start the server:
 Modify the RelayTest performance test with the correct host and desired load (test/perf_test.exs):  
 <pre>
   setup_all do  
-    {:ok, rhost: '<remote_hostname>',  
+    {:ok, rhost: '<remote_ip>',  
           load1: 100,  
           load_max: 1000  
     }  
