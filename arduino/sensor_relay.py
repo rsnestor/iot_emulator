@@ -29,7 +29,7 @@ headers = {
 params = {}
 proxies = {}
 # request sensor template 
-data = { 'location': '38.9586, -77.3570', 'ip': '75.106.133.2', 'propertyId': 12000, 'realtorId': 'URAWSM', 'city': 'Reston', 'state': 'VA', 'squareFootage': 50000, 'propertyType': 'Commercial', 'density': 'urban', 'temperature': getTemp(), 'humidity': 45, 'mold': 110, 'motion': 'Y', 'age': 22, 'timestamp': '' }
+data = { 'location': '38.9586, -77.3570', 'ip': '75.106.133.2', 'propertyId': 12000, 'realtorId': 'URAWSM', 'city': 'Reston', 'state': 'VA', 'squareFootage': 50000, 'propertyType': 'Commercial', 'density': 'urban', 'temperature': 999, 'humidity': 45, 'mold': 110, 'motion': 'Y', 'age': 22, 'timestamp': '' }
 
 
 def relaySensorData(data,recs):
@@ -47,7 +47,8 @@ def relaySensorRecord(data):
     (dt, micro) = datetime.now().strftime('%Y-%m-%dT%H:%M:%S.%f').split('.')
     data['timestamp'] = "%s.%03d" % (dt, int(micro) / 1000)
     # read TMP36
-    data['temperature'] = getTemp()
+    if args.mock != True:
+        data['temperature'] = getTemp()
     
     # randomize (property emulation)
     if args.randomize:
@@ -57,7 +58,8 @@ def relaySensorRecord(data):
     data['location'] = args.location
 
     #response = requests.post('https://search-iottest-zrdh3oawbzm5a62ful33hnprbi.us-east-1.es.amazonaws.com/sensor-data/doc', data=json.dumps(data), headers=headers)
-    response = requests.post(ES_URL, proxies=proxies, headers=headers, params=params, data=json.dumps(data))
+    if args.mock != True:
+       response = requests.post(ES_URL, proxies=proxies, headers=headers, params=params, data=json.dumps(data))
     locus+=1
 
     if response.status_code in (requests.codes.ok,requests.codes.created):
@@ -97,6 +99,7 @@ parser = argparse.ArgumentParser(description="Start the sensor relay server")
 group = parser.add_mutually_exclusive_group()
 group.add_argument("-v", "--verbose", action="store_true")
 group.add_argument("-q", "--quiet", action="store_true")
+parser.add_argument("-m", "--mock", action="store_true", default=False, help="Mock sensor and ES relay")
 parser.add_argument("-n", "--num_records", type=int, default=-1, help="number of records to relay")
 parser.add_argument("-e", "--elastic_url", type=str, required=True, help='http(s)://<user>:<pwd>@elastichost>:<port>/<index>/<doc_type>')
 parser.add_argument("-l", "--location", type=str, default="38.9586, -77.3570", help="<latitude>, <longitude>")
